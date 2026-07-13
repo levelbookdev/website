@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Levelbook — Field records that hold up</title>
+  <meta name="description" content="Levelbook is a family of open-source, self-hostable construction field-records tools. Tag a physical thing, scan it with a phone, capture the work, and build an append-only record that stands as a contractual deliverable.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Levelbook — Field records that hold up">
+  <meta property="og:description" content="Open-source, self-hostable construction field-records tools. Tag it, scan it, capture the work, deliver a record that holds up.">
+  <meta property="og:url" content="https://levelbook.dev">
+  <meta property="og:site_name" content="Levelbook">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --ink:#14161a;
+      --paper:#ffffff;
+      --steel:#5b6470;
+      --line:#d8dce1;
+      --safety:#ff5a1f;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+    a { color: var(--safety); }
+    a:hover { text-decoration: none; }
+
+    header {
+      border-bottom: 3px solid var(--ink);
+    }
+    .bar {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+    .wordmark {
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 20px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .bar a.nav { color: var(--safety); font-size: 15px; }
+
+    main { padding: 8px 0 40px; }
+
+    h1 {
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin: 28px 0 12px;
+    }
+    .subhead {
+      color: var(--steel);
+      font-size: 20px;
+      margin: 0 0 8px;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--steel);
+      font-size: 14px;
+      font-weight: 700;
+      margin: 40px 0 14px;
+    }
+
+    p { margin: 0 0 16px; }
+
+    .tool { margin: 0 0 22px; }
+    .tool h3 {
+      font-size: 19px;
+      margin: 0 0 4px;
+    }
+    .tool h3 a { text-decoration: none; }
+    .tool h3 a:hover { text-decoration: underline; }
+    .tool p { margin: 0; color: var(--ink); }
+    .more { color: var(--steel); }
+
+    ul { margin: 0 0 16px; padding-left: 22px; }
+    li { margin: 0 0 8px; }
+
+    footer {
+      border-top: 3px solid var(--ink);
+      padding: 20px 0 40px;
+      color: var(--steel);
+      font-size: 15px;
+    }
+    footer p { margin: 0 0 8px; }
+    footer a { color: var(--safety); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <a class="wordmark" href="/">Levelbook</a>
+      <a class="nav" href="https://github.com/levelbookdev">GitHub</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Field records that hold up.</h1>
+    <p class="subhead">Tag the thing. Scan it with the phone in your pocket. Capture the work where it happens. What comes out is an append-only record you can hand over as an accepted deliverable.</p>
+
+    <h2>The tools</h2>
+
+    <div class="tool">
+      <h3><a href="https://github.com/mds08011/trenchnote">TrenchNote</a></h3>
+      <p>Field-logistics ledger for equipment and materials. A QR code lives on the asset; scan it to see what it is, where it belongs, and who moved it last.</p>
+    </div>
+
+    <div class="tool">
+      <h3><a href="https://github.com/mds08011/loopcheck">LoopCheck</a></h3>
+      <p>Startup and commissioning checkout tracker. Every instrument already wears a P&amp;ID tag; LoopCheck puts a QR on it for checkout status, punch items, checklists, and turnover packages.</p>
+    </div>
+
+    <div class="tool">
+      <h3><a href="https://github.com/mds08011/mainline">MainLine</a></h3>
+      <p>Field data capture for linear work by station and alignment, utility potholing first. Records depth, cover, offset, and a GPS fix for every hole.</p>
+    </div>
+
+    <div class="tool">
+      <h3><a href="https://github.com/mds08011/linecheck">LineCheck</a></h3>
+      <p>Offline-tolerant field application for documenting pipeline pressure tests. Captures witness attestations, supporting evidence, and acceptance records on water and wastewater construction projects.</p>
+    </div>
+
+    <p class="more">More tools are in development.</p>
+
+    <h2>How they are built</h2>
+    <ul>
+      <li>One binary running on your own hardware.</li>
+      <li>Static pages with no build step.</li>
+      <li>Offline-first, so the field never waits on a signal.</li>
+      <li>No accounts for field users.</li>
+      <li>Append-only records.</li>
+      <li>AGPLv3.</li>
+      <li>No trackers.</li>
+    </ul>
+
+    <h2>Bindery</h2>
+    <p>Bindery is the planned managed layer for teams that would rather not run servers. It covers hosting, monitored and tested backups, notifications, and compiled turnover binders.</p>
+    <p>Self-hosting stays the first-class path forever. Bindery is a convenience, never a gate.</p>
+  </main>
+
+  <footer class="wrap">
+    <p><a href="https://github.com/levelbookdev/website">Source for this page</a></p>
+    <p>No analytics, no trackers, no cookies. This page loads nothing from anywhere.</p>
+    <p>&copy; 2026 Levelbook</p>
+  </footer>
+</body>
+</html>
