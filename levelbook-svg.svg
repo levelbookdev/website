@@ -1,0 +1,18 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Iron Background -->
+  <rect width="512" height="512" rx="112" fill="#1C2434"/>
+  
+  <!-- Safety Orange Book Body -->
+  <rect x="136" y="96" width="240" height="320" rx="16" fill="#F97316"/>
+  
+  <!-- Black/Iron Binding Spine -->
+  <rect x="136" y="96" width="48" height="320" rx="16" fill="#0F172A"/>
+  <rect x="160" y="96" width="24" height="320" fill="#0F172A"/>
+  
+  <!-- The "Level" / Strike-through Line -->
+  <rect x="104" y="240" width="304" height="32" fill="#1C2434"/>
+  
+  <!-- Survey Target / Crosshair -->
+  <circle cx="280" cy="256" r="48" fill="#F97316" stroke="#1C2434" stroke-width="24"/>
+  <circle cx="280" cy="256" r="16" fill="#1C2434"/>
+</svg>
