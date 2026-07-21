@@ -77,7 +77,11 @@
 
     p { margin: 0 0 16px; }
 
-    .tool { margin: 0 0 22px; }
+    .tool {
+      margin: 0 0 22px;
+      border-left: 3px solid var(--line);
+      padding-left: 16px;
+    }
     .tool h3 {
       font-size: 19px;
       margin: 0 0 4px;
@@ -85,6 +89,33 @@
     .tool h3 a { text-decoration: none; }
     .tool h3 a:hover { text-decoration: underline; }
     .tool p { margin: 0; color: var(--ink); }
+
+    .status {
+      display: inline-block;
+      margin: 6px 0 0;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--steel);
+    }
+    .status .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 7px;
+      vertical-align: 1px;
+      background: var(--steel);
+    }
+    .tool.is-active { border-left-color: var(--safety); }
+    .tool.is-active .status .dot { background: var(--safety); }
+    .tool.is-dormant { border-left-color: var(--line); }
+    .tool.is-dormant .status .dot { background: var(--paper); box-shadow: inset 0 0 0 2px var(--steel); }
+
+    .links { margin: 4px 0 0; font-size: 15px; }
+    .links a { white-space: nowrap; }
+    .links .sep { color: var(--line); padding: 0 6px; }
     .more { color: var(--steel); }
 
     ul { margin: 0 0 16px; padding-left: 22px; }
@@ -111,34 +142,41 @@
   <main class="wrap">
     <h1>Field records that hold up.</h1>
     <p class="subhead">Tag the thing. Scan it with the phone in your pocket. Capture the work where it happens. What comes out is an append-only record you can hand over as an accepted deliverable.</p>
+    <p>Four tools, each covering one part of the job. Where a tool is done, we say so &mdash; a finished tool is not an abandoned one.</p>
 
     <h2>The tools</h2>
 
-    <div class="tool">
-      <h3><a href="https://github.com/levelbookdev/trenchnote">TrenchNote</a></h3>
-      <p>Field-logistics ledger for equipment and materials. A QR code lives on the asset; scan it to see what it is, where it belongs, and who moved it last.</p>
+    <div class="tool is-active">
+      <h3><a href="https://trenchnote.com">TrenchNote</a></h3>
+      <p>Equipment and materials ledger. A QR code lives on the asset; scan it to see what it is, where it sits, and who moved it last.</p>
+      <p class="status"><span class="dot"></span>Active &middot; v1.0</p>
+      <p class="links"><a href="https://trenchnote.com">trenchnote.com</a><span class="sep">/</span><a href="https://github.com/levelbookdev/trenchnote">Source</a></p>
+    </div>
+
+    <div class="tool is-active">
+      <h3><a href="https://levelbookdev.github.io/loopcheck">LoopCheck</a></h3>
+      <p>Commissioning checkout, loop by loop. Every instrument already wears a P&amp;ID tag; LoopCheck adds a QR for checkout status, punch items, and turnover packages.</p>
+      <p class="status"><span class="dot"></span>Active &middot; pre-release</p>
+      <p class="links"><a href="https://levelbookdev.github.io/loopcheck">Product page</a><span class="sep">/</span><a href="https://github.com/levelbookdev/loopcheck">Source</a></p>
     </div>
 
     <div class="tool">
-      <h3><a href="https://github.com/levelbookdev/loopcheck">LoopCheck</a></h3>
-      <p>Startup and commissioning checkout tracker. Every instrument already wears a P&amp;ID tag; LoopCheck puts a QR on it for checkout status, punch items, checklists, and turnover packages.</p>
+      <h3><a href="https://github.com/levelbookdev/slipsign">SlipSign</a></h3>
+      <p>Same-day T&amp;M tickets, signed on the tailgate before the crew rolls off site.</p>
+      <p class="status"><span class="dot"></span>Stable &middot; v1.0 &middot; maintenance</p>
+      <p class="links"><a href="https://github.com/levelbookdev/slipsign">Source</a></p>
     </div>
 
-    <div class="tool">
+    <div class="tool is-dormant">
       <h3><a href="https://github.com/levelbookdev/mainline">MainLine</a></h3>
-      <p>Field data capture for linear work by station and alignment, utility potholing first. Records depth, cover, offset, and a GPS fix for every hole.</p>
+      <p>Station-based records for linear work &mdash; depth, cover, offset, and a GPS fix at every station.</p>
+      <p class="status"><span class="dot"></span>Dormant &middot; feature-complete for shipped phases</p>
+      <p class="links"><a href="https://github.com/levelbookdev/mainline">Source</a></p>
     </div>
-
-    <div class="tool">
-      <h3><a href="https://github.com/mds08011/linecheck">LineCheck</a></h3>
-      <p>Offline-tolerant field application for documenting pipeline pressure tests. Captures witness attestations, supporting evidence, and acceptance records on water and wastewater construction projects.</p>
-    </div>
-
-    <p class="more">More tools are in development.</p>
 
     <h2>How they are built</h2>
     <ul>
-      <li>One binary running on your own hardware.</li>
+      <li>One PocketBase binary running on your own hardware.</li>
       <li>Static pages with no build step.</li>
       <li>Offline-first, so the field never waits on a signal.</li>
       <li>No accounts for field users.</li>
@@ -146,10 +184,7 @@
       <li>AGPLv3.</li>
       <li>No trackers.</li>
     </ul>
-
-    <h2>Bindery</h2>
-    <p>Bindery is the planned managed layer for teams that would rather not run servers. It covers hosting, monitored and tested backups, notifications, and compiled turnover binders.</p>
-    <p>Self-hosting stays the first-class path forever. Bindery is a convenience, never a gate.</p>
+    <p class="more">All four sources live at <a href="https://github.com/levelbookdev">github.com/levelbookdev</a>.</p>
   </main>
 
   <footer class="wrap">

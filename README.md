@@ -11,6 +11,30 @@ The site is a single self-contained page: `docs/index.html`, with inline CSS,
 no JavaScript, no webfonts, and no external requests. Total page weight is well
 under 50 KB.
 
+## Content inventory
+
+The page covers, and only covers:
+
+- The umbrella statement — tag it, scan it, capture it, keep the record.
+- One card per shipped product: a one-sentence pitch in field language, an
+  honest status label, a repo link, and a product-page link where one exists.
+  Current family: TrenchNote (active, v1.0), LoopCheck (active, pre-release),
+  SlipSign (stable v1.0, maintenance), MainLine (dormant, feature-complete for
+  shipped phases).
+- How the tools are built — self-hosted PocketBase binary, static frontend,
+  offline-first, append-only, AGPLv3, no trackers.
+- A footer with the source link, the no-analytics statement, and the copyright.
+
+Status labels are load-bearing. A dormant or maintenance-mode tool is labeled
+as such on purpose: it signals a portfolio someone is still tending, not one
+that was walked away from. Do not quietly upgrade a label to make the page look
+busier.
+
+**Rule:** Bindery, managed services, hosting, pricing, and any other commercial
+layer stay off this page until further notice. That layer is deliberately
+non-public. If a change would add commercial copy here, it does not belong on
+this page.
+
 ## Local preview
 
 Open the file directly:
