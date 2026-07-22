@@ -62,6 +62,20 @@ The site is served by GitHub Pages:
 
 Pushing to `main` publishes automatically.
 
+### levelbook.org redirect
+
+`levelbook.org` is a secondary domain that 301-redirects to `levelbook.dev`.
+GitHub Pages can't 301 a bare domain to a different domain, so the redirect
+lives at the registrar (Porkbun URL forwarding), not in this repo:
+
+- Apex and `www` both forward to `https://levelbook.dev`, type **Permanent
+  (301)**, path forwarding and cloaking off, SSL/HTTPS forwarding on.
+- Keep `levelbook.org` **out** of `docs/CNAME` — that file stays `levelbook.dev`
+  only, or Pages will fight the forward.
+
+Verify with `curl -sI https://levelbook.org` — expect `301` and
+`location: https://levelbook.dev/`.
+
 ## Design tokens
 
 The page uses the shared Levelbook design tokens, kept in sync with the product
